@@ -1,0 +1,16 @@
+<div class="row">
+  {% for field in form %}
+  <div class="input-field col s12">
+    {{ field.label_tag }}
+    {{ field }}
+    {% if field.errors %}
+      <ul class="left-align">
+      {% for error in field.errors %}
+        <li class="helper-text" data-error="wrong">{{ error|safe }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+</div>
